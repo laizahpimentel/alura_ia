@@ -38,7 +38,7 @@ function pesquisar() {
 
     // Campo com busca sem chave
     if (!resultados) {
-        resultados = "<p>Nada foi encontrado2!</p>"
+        resultados = "<p>Nada foi encontrado!</p>"
     }
         // console.log(dado.titulo.includes(campoPesquisa))
     }
