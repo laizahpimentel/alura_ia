@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Olimpiadas</title>
 </head>
+
 <body>
     <header>
         <h1>Atletas do brasil</h1>
@@ -13,7 +15,10 @@
     <main>
         <section>
             <input type="text" placeholder="digite o nome dos atletas">
-            <button>Pesquisar</button>
+            <button onclick="pesquisar()">Pesquisar</button>
+        </section>
+        <section class="resultados-pesquisa"
+        id="resultados-pesquisa">
         </section>
     </main>
 
@@ -21,5 +26,9 @@
         <p>2024 - Atletas do Brasil. Todos os direitos reservados</p>
         <p>Entre em contato pelo email: email@atletas.com</p>
     </footer>
+    <script src="dados.js"></script>
+    <script src="app.js"></script>
 </body>
+
+
 </html>
