@@ -1,25 +1,48 @@
 function pesquisar() {
-    // Esta função é responsável por realizar uma pesquisa e exibir os resultados na página.
-    console.log("clicou!"); // Loga no console para confirmar que a função foi chamada.
+    // console.log("clicou!");
+    let section = document.getElementById("resultados-pesquisa");
 
-    let section = document.getElementById("resultados-pesquisa"); // Obtém a seção HTML onde os resultados serão exibidos.
+    let campoPesquisa = document.getElementById("campo-pesquisa").value
+    // console.log(campoPesquisa);
 
-    let resultados = ""; // Inicializa uma string vazia para armazenar os resultados da pesquisa.
-
-    // Itera sobre os dados da pesquisa e cria HTML para cada item.
-    for (let dado of dados) {
-    resultados += `
-<div class="item-resultado">
-    <h2>
-    <a href="#" target="_blank">${dado.titulo}</a>
-    </h2>
-    <p class="descricao-meta">${dado.descricao}</p>
-    <a href="${dado.link}" target="_blank">saiba mais!</a>
-</div>
-`;
+    // Campo vazio busca
+    if (!campoPesquisa) {
+        section.innerHTML = "<p>Nada foi encontrado. Sem palavra-chave de busca! </p>"
+        return
     }
 
-    // Atribui o HTML gerado à seção de resultados.
+    campoPesquisa = campoPesquisa.toLowerCase()
+
+    let resultados = "";
+    let titulo = "";
+    let descricao = "";
+    let tags = "" ;
+
+    for (let dado of dados) {
+        titulo = dado.titulo.toLowerCase()
+        descricao = dado.descricao.toLowerCase()
+        tags = dado.tags.toLowerCase()
+    if (titulo.includes(campoPesquisa) || descricao.
+    includes(campoPesquisa) ||  tags.includes(campoPesquisa)) {
+        //cria novo elemento
+        resultados += `
+        <div class="item-resultado">
+            <h2>
+                <a href="#" target="_blank">${dado.titulo}</a>
+            </h2>
+            <p class="descricao-meta">${dado.descricao}</p>
+            <a href=${dado.link} target="_blank">Mais informações</a>
+        </div>
+    `;
+    }
+
+    // Campo com busca sem chave
+    if (!resultados) {
+        resultados = "<p>Nada foi encontrado2!</p>"
+    }
+        // console.log(dado.titulo.includes(campoPesquisa))
+    }
+
     section.innerHTML = resultados;
 }
 
