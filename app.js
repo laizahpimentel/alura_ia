@@ -7,7 +7,7 @@ function pesquisar() {
 
     // Campo vazio busca
     if (!campoPesquisa) {
-        section.innerHTML = "<p>Nada foi encontrado. Sem palavra-chave de busca! </p>"
+        section.innerHTML = "<p>Sem busca. Sem palavra-chave de busca! </p>"
         return
     }
 
@@ -38,9 +38,9 @@ function pesquisar() {
 
     // Campo com busca sem chave
     if (!resultados) {
-        resultados = "<p>Nada foi encontrado!</p>"
+        resultados = "<p>Sem busca!</p>"
     }
-        // console.log(dado.titulo.includes(campoPesquisa))
+
     }
 
     section.innerHTML = resultados;
